@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/93jessycollin93-del/jacky/main/superstation/spec/pod.manifest.schema.json",
+  "kernel": "1.0.0",
+  "pod": {
+    "id": "sas.pod.ai-data-analist",
+    "name": "AI Data Analyst",
+    "role": "surface",
+    "repo": "93jessycollin93-del/AI-Data-Analist",
+    "summary": "Drag-drop CSV/JSON analysis \u2014 statistical engine with trend, anomaly and pattern detection."
+  },
+  "provides": [
+    {
+      "id": "sas.analysis.dataset",
+      "version": "1.0.0",
+      "title": "Ingested dataset summary"
+    },
+    {
+      "id": "sas.analysis.insight",
+      "version": "1.0.0",
+      "title": "Trend, anomaly and pattern detection \u2014 src/lib/analysis-engine.ts",
+      "requires": [
+        "sas.analysis.dataset"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "id": "sas.route.ask",
+      "range": "1.x",
+      "optional": true
+    },
+    {
+      "id": "sas.condense.compress",
+      "range": "1.x",
+      "optional": true
+    }
+  ],
+  "surfaces": [
+    {
+      "kind": "static",
+      "base": "/",
+      "note": "Vite/React"
+    }
+  ]
+}
